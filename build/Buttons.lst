@@ -1,0 +1,848 @@
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"Buttons.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ZN5daisy6SwitchD2Ev,"axG",%progbits,_ZN5daisy6SwitchD5Ev,comdat
+  19              		.align	1
+  20              		.p2align 2,,3
+  21              		.weak	_ZN5daisy6SwitchD2Ev
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	_ZN5daisy6SwitchD2Ev:
+  27              	.LVL0:
+  28              	.LFB1640:
+  29              		.file 1 "./libDaisy/src/hid/switch.h"
+   1:./libDaisy/src/hid/switch.h **** #pragma once
+   2:./libDaisy/src/hid/switch.h **** #ifndef DSY_SWITCH_H
+   3:./libDaisy/src/hid/switch.h **** #define DSY_SWITCH_H
+   4:./libDaisy/src/hid/switch.h **** #include "daisy_core.h"
+   5:./libDaisy/src/hid/switch.h **** #include "per/gpio.h"
+   6:./libDaisy/src/hid/switch.h **** #include "sys/system.h"
+   7:./libDaisy/src/hid/switch.h **** 
+   8:./libDaisy/src/hid/switch.h **** namespace daisy
+   9:./libDaisy/src/hid/switch.h **** {
+  10:./libDaisy/src/hid/switch.h **** /** 
+  11:./libDaisy/src/hid/switch.h ****     Generic Class for handling momentary/latching switches \n 
+  12:./libDaisy/src/hid/switch.h ****     Inspired/influenced by Mutable Instruments (pichenettes) Switch classes
+  13:./libDaisy/src/hid/switch.h ****     @author Stephen Hensley
+  14:./libDaisy/src/hid/switch.h ****     @date December 2019
+  15:./libDaisy/src/hid/switch.h ****     @ingroup controls
+  16:./libDaisy/src/hid/switch.h **** */
+  17:./libDaisy/src/hid/switch.h **** class Switch
+  18:./libDaisy/src/hid/switch.h **** {
+  19:./libDaisy/src/hid/switch.h ****   public:
+  20:./libDaisy/src/hid/switch.h ****     /** Specifies the expected behavior of the switch */
+  21:./libDaisy/src/hid/switch.h ****     enum Type
+  22:./libDaisy/src/hid/switch.h ****     {
+  23:./libDaisy/src/hid/switch.h ****         TYPE_TOGGLE,    /**< & */
+  24:./libDaisy/src/hid/switch.h ****         TYPE_MOMENTARY, /**< & */
+  25:./libDaisy/src/hid/switch.h ****     };
+  26:./libDaisy/src/hid/switch.h ****     /** Specifies whether the pressed is HIGH or LOW. */
+  27:./libDaisy/src/hid/switch.h ****     enum Polarity
+  28:./libDaisy/src/hid/switch.h ****     {
+  29:./libDaisy/src/hid/switch.h ****         POLARITY_NORMAL,   /**< & */
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 2
+
+
+  30:./libDaisy/src/hid/switch.h ****         POLARITY_INVERTED, /**< & */
+  31:./libDaisy/src/hid/switch.h ****     };
+  32:./libDaisy/src/hid/switch.h **** 
+  33:./libDaisy/src/hid/switch.h ****     /** Specifies whether to use built-in Pull Up/Down resistors to hold button at a given state wh
+  34:./libDaisy/src/hid/switch.h ****     enum Pull
+  35:./libDaisy/src/hid/switch.h ****     {
+  36:./libDaisy/src/hid/switch.h ****         PULL_UP,   /**< & */
+  37:./libDaisy/src/hid/switch.h ****         PULL_DOWN, /**< & */
+  38:./libDaisy/src/hid/switch.h ****         PULL_NONE, /**< & */
+  39:./libDaisy/src/hid/switch.h ****     };
+  40:./libDaisy/src/hid/switch.h **** 
+  41:./libDaisy/src/hid/switch.h ****     Switch() {}
+  42:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+  30              		.loc 1 42 5 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 42 16 is_stmt 0 view .LVU1
+  36 0000 7047     		bx	lr
+  37              		.cfi_endproc
+  38              	.LFE1640:
+  40              		.weak	_ZN5daisy6SwitchD1Ev
+  41              		.thumb_set _ZN5daisy6SwitchD1Ev,_ZN5daisy6SwitchD2Ev
+  42 0002 00BF     		.section	.text._Z11InitButtonsv,"ax",%progbits
+  43              		.align	1
+  44              		.p2align 2,,3
+  45              		.global	_Z11InitButtonsv
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	_Z11InitButtonsv:
+  51              	.LFB2561:
+  52              		.file 2 "Buttons.cpp"
+   1:Buttons.cpp   **** //Buttons.cpp:
+   2:Buttons.cpp   **** 
+   3:Buttons.cpp   **** #include "Buttons.h"
+   4:Buttons.cpp   **** 
+   5:Buttons.cpp   **** // Keep existing buttons
+   6:Buttons.cpp   **** Switch button1;
+   7:Buttons.cpp   **** Switch button2;
+   8:Buttons.cpp   **** Switch buttonBack;
+   9:Buttons.cpp   **** 
+  10:Buttons.cpp   **** // Add new chord buttons
+  11:Buttons.cpp   **** Switch buttonC;
+  12:Buttons.cpp   **** Switch buttonDm;
+  13:Buttons.cpp   **** Switch buttonEm;
+  14:Buttons.cpp   **** Switch buttonF;
+  15:Buttons.cpp   **** Switch buttonG;
+  16:Buttons.cpp   **** Switch buttonAm;
+  17:Buttons.cpp   **** Switch buttonBdim;
+  18:Buttons.cpp   **** 
+  19:Buttons.cpp   **** void InitButtons()
+  20:Buttons.cpp   **** {
+  53              		.loc 2 20 1 is_stmt 1 view -0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 40
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 3
+
+
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  21:Buttons.cpp   ****     // Initialize existing buttons
+  22:Buttons.cpp   ****     button1.Init(hw.GetPin(28), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVE
+  57              		.loc 2 22 5 view .LVU3
+  20:Buttons.cpp   ****     // Initialize existing buttons
+  58              		.loc 2 20 1 is_stmt 0 view .LVU4
+  59 0000 10B5     		push	{r4, lr}
+  60              		.cfi_def_cfa_offset 8
+  61              		.cfi_offset 4, -8
+  62              		.cfi_offset 14, -4
+  63              		.loc 2 22 17 view .LVU5
+  64 0002 1C20     		movs	r0, #28
+  65 0004 0024     		movs	r4, #0
+  20:Buttons.cpp   ****     // Initialize existing buttons
+  66              		.loc 2 20 1 view .LVU6
+  67 0006 2DED028B 		vpush.64	{d8}
+  68              		.cfi_def_cfa_offset 16
+  69              		.cfi_offset 80, -16
+  70              		.cfi_offset 81, -12
+  71 000a 8CB0     		sub	sp, sp, #48
+  72              		.cfi_def_cfa_offset 64
+  73              		.loc 2 22 17 view .LVU7
+  74 000c 9FED488A 		vldr.32	s16, .L5
+  75 0010 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+  76              	.LVL1:
+  77 0014 0123     		movs	r3, #1
+  78 0016 ADF80800 		strh	r0, [sp, #8]	@ movhi
+  79 001a B0EE480A 		vmov.f32	s0, s16
+  80 001e 1A46     		mov	r2, r3
+  81 0020 0299     		ldr	r1, [sp, #8]
+  82 0022 4448     		ldr	r0, .L5+4
+  83 0024 0094     		str	r4, [sp]
+  84 0026 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+  85              	.LVL2:
+  23:Buttons.cpp   ****     button2.Init(hw.GetPin(27), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVE
+  86              		.loc 2 23 5 is_stmt 1 view .LVU8
+  87              		.loc 2 23 17 is_stmt 0 view .LVU9
+  88 002a 1B20     		movs	r0, #27
+  89 002c FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+  90              	.LVL3:
+  91 0030 0123     		movs	r3, #1
+  92 0032 ADF80C00 		strh	r0, [sp, #12]	@ movhi
+  93 0036 B0EE480A 		vmov.f32	s0, s16
+  94 003a 1A46     		mov	r2, r3
+  95 003c 0399     		ldr	r1, [sp, #12]
+  96 003e 3E48     		ldr	r0, .L5+8
+  97 0040 0094     		str	r4, [sp]
+  98 0042 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+  99              	.LVL4:
+  24:Buttons.cpp   ****     buttonBack.Init(hw.GetPin(26), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_I
+ 100              		.loc 2 24 5 is_stmt 1 view .LVU10
+ 101              		.loc 2 24 20 is_stmt 0 view .LVU11
+ 102 0046 1A20     		movs	r0, #26
+ 103 0048 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 104              	.LVL5:
+ 105 004c 0123     		movs	r3, #1
+ 106 004e ADF81000 		strh	r0, [sp, #16]	@ movhi
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 4
+
+
+ 107 0052 B0EE480A 		vmov.f32	s0, s16
+ 108 0056 1A46     		mov	r2, r3
+ 109 0058 0499     		ldr	r1, [sp, #16]
+ 110 005a 3848     		ldr	r0, .L5+12
+ 111 005c 0094     		str	r4, [sp]
+ 112 005e FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 113              	.LVL6:
+  25:Buttons.cpp   **** 
+  26:Buttons.cpp   ****     // Initialize new chord buttons
+  27:Buttons.cpp   ****     buttonC.Init(hw.GetPin(0), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVER
+ 114              		.loc 2 27 5 is_stmt 1 view .LVU12
+ 115              		.loc 2 27 17 is_stmt 0 view .LVU13
+ 116 0062 2046     		mov	r0, r4
+ 117 0064 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 118              	.LVL7:
+ 119 0068 0123     		movs	r3, #1
+ 120 006a ADF81400 		strh	r0, [sp, #20]	@ movhi
+ 121 006e B0EE480A 		vmov.f32	s0, s16
+ 122 0072 1A46     		mov	r2, r3
+ 123 0074 0599     		ldr	r1, [sp, #20]
+ 124 0076 3248     		ldr	r0, .L5+16
+ 125 0078 0094     		str	r4, [sp]
+ 126 007a FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 127              	.LVL8:
+  28:Buttons.cpp   ****     buttonDm.Init(hw.GetPin(1), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVE
+ 128              		.loc 2 28 5 is_stmt 1 view .LVU14
+ 129              		.loc 2 28 18 is_stmt 0 view .LVU15
+ 130 007e 0120     		movs	r0, #1
+ 131 0080 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 132              	.LVL9:
+ 133 0084 0123     		movs	r3, #1
+ 134 0086 ADF81800 		strh	r0, [sp, #24]	@ movhi
+ 135 008a B0EE480A 		vmov.f32	s0, s16
+ 136 008e 1A46     		mov	r2, r3
+ 137 0090 0699     		ldr	r1, [sp, #24]
+ 138 0092 2C48     		ldr	r0, .L5+20
+ 139 0094 0094     		str	r4, [sp]
+ 140 0096 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 141              	.LVL10:
+  29:Buttons.cpp   ****     buttonEm.Init(hw.GetPin(2), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVE
+ 142              		.loc 2 29 5 is_stmt 1 view .LVU16
+ 143              		.loc 2 29 18 is_stmt 0 view .LVU17
+ 144 009a 0220     		movs	r0, #2
+ 145 009c FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 146              	.LVL11:
+ 147 00a0 0123     		movs	r3, #1
+ 148 00a2 ADF81C00 		strh	r0, [sp, #28]	@ movhi
+ 149 00a6 B0EE480A 		vmov.f32	s0, s16
+ 150 00aa 1A46     		mov	r2, r3
+ 151 00ac 0799     		ldr	r1, [sp, #28]
+ 152 00ae 2648     		ldr	r0, .L5+24
+ 153 00b0 0094     		str	r4, [sp]
+ 154 00b2 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 155              	.LVL12:
+  30:Buttons.cpp   ****     buttonF.Init(hw.GetPin(3), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVER
+ 156              		.loc 2 30 5 is_stmt 1 view .LVU18
+ 157              		.loc 2 30 17 is_stmt 0 view .LVU19
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 5
+
+
+ 158 00b6 0320     		movs	r0, #3
+ 159 00b8 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 160              	.LVL13:
+ 161 00bc 0123     		movs	r3, #1
+ 162 00be ADF82000 		strh	r0, [sp, #32]	@ movhi
+ 163 00c2 B0EE480A 		vmov.f32	s0, s16
+ 164 00c6 1A46     		mov	r2, r3
+ 165 00c8 0899     		ldr	r1, [sp, #32]
+ 166 00ca 2048     		ldr	r0, .L5+28
+ 167 00cc 0094     		str	r4, [sp]
+ 168 00ce FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 169              	.LVL14:
+  31:Buttons.cpp   ****     buttonG.Init(hw.GetPin(4), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVER
+ 170              		.loc 2 31 5 is_stmt 1 view .LVU20
+ 171              		.loc 2 31 17 is_stmt 0 view .LVU21
+ 172 00d2 0420     		movs	r0, #4
+ 173 00d4 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 174              	.LVL15:
+ 175 00d8 0123     		movs	r3, #1
+ 176 00da ADF82400 		strh	r0, [sp, #36]	@ movhi
+ 177 00de B0EE480A 		vmov.f32	s0, s16
+ 178 00e2 1A46     		mov	r2, r3
+ 179 00e4 0999     		ldr	r1, [sp, #36]
+ 180 00e6 1A48     		ldr	r0, .L5+32
+ 181 00e8 0094     		str	r4, [sp]
+ 182 00ea FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 183              	.LVL16:
+  32:Buttons.cpp   ****     buttonAm.Init(hw.GetPin(5), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVE
+ 184              		.loc 2 32 5 is_stmt 1 view .LVU22
+ 185              		.loc 2 32 18 is_stmt 0 view .LVU23
+ 186 00ee 0520     		movs	r0, #5
+ 187 00f0 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 188              	.LVL17:
+ 189 00f4 0123     		movs	r3, #1
+ 190 00f6 ADF82800 		strh	r0, [sp, #40]	@ movhi
+ 191 00fa B0EE480A 		vmov.f32	s0, s16
+ 192 00fe 1A46     		mov	r2, r3
+ 193 0100 0A99     		ldr	r1, [sp, #40]
+ 194 0102 1448     		ldr	r0, .L5+36
+ 195 0104 0094     		str	r4, [sp]
+ 196 0106 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 197              	.LVL18:
+  33:Buttons.cpp   ****     buttonBdim.Init(hw.GetPin(6), 1000, Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_IN
+ 198              		.loc 2 33 5 is_stmt 1 view .LVU24
+ 199              		.loc 2 33 20 is_stmt 0 view .LVU25
+ 200 010a 0620     		movs	r0, #6
+ 201 010c FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 202              	.LVL19:
+ 203 0110 0123     		movs	r3, #1
+ 204 0112 ADF82C00 		strh	r0, [sp, #44]	@ movhi
+ 205 0116 B0EE480A 		vmov.f32	s0, s16
+ 206 011a 0F48     		ldr	r0, .L5+40
+ 207 011c 1A46     		mov	r2, r3
+ 208 011e 0B99     		ldr	r1, [sp, #44]
+ 209 0120 0094     		str	r4, [sp]
+ 210 0122 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+ 211              	.LVL20:
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 6
+
+
+  34:Buttons.cpp   **** }
+ 212              		.loc 2 34 1 view .LVU26
+ 213 0126 0CB0     		add	sp, sp, #48
+ 214              		.cfi_def_cfa_offset 16
+ 215              		@ sp needed
+ 216 0128 BDEC028B 		vldm	sp!, {d8}
+ 217              		.cfi_restore 80
+ 218              		.cfi_restore 81
+ 219              		.cfi_def_cfa_offset 8
+ 220 012c 10BD     		pop	{r4, pc}
+ 221              	.L6:
+ 222 012e 00BF     		.align	2
+ 223              	.L5:
+ 224 0130 00007A44 		.word	1148846080
+ 225 0134 00000000 		.word	.LANCHOR0
+ 226 0138 00000000 		.word	.LANCHOR1
+ 227 013c 00000000 		.word	.LANCHOR2
+ 228 0140 00000000 		.word	.LANCHOR3
+ 229 0144 00000000 		.word	.LANCHOR4
+ 230 0148 00000000 		.word	.LANCHOR5
+ 231 014c 00000000 		.word	.LANCHOR6
+ 232 0150 00000000 		.word	.LANCHOR7
+ 233 0154 00000000 		.word	.LANCHOR8
+ 234 0158 00000000 		.word	.LANCHOR9
+ 235              		.cfi_endproc
+ 236              	.LFE2561:
+ 238              		.section	.text._Z13UpdateButtonsv,"ax",%progbits
+ 239              		.align	1
+ 240              		.p2align 2,,3
+ 241              		.global	_Z13UpdateButtonsv
+ 242              		.syntax unified
+ 243              		.thumb
+ 244              		.thumb_func
+ 246              	_Z13UpdateButtonsv:
+ 247              	.LFB2562:
+  35:Buttons.cpp   **** 
+  36:Buttons.cpp   **** void UpdateButtons() {
+ 248              		.loc 2 36 22 is_stmt 1 view -0
+ 249              		.cfi_startproc
+ 250              		@ args = 0, pretend = 0, frame = 0
+ 251              		@ frame_needed = 0, uses_anonymous_args = 0
+  37:Buttons.cpp   ****     // Debounce existing buttons
+  38:Buttons.cpp   ****     button1.Debounce();
+ 252              		.loc 2 38 5 view .LVU28
+  36:Buttons.cpp   ****     // Debounce existing buttons
+ 253              		.loc 2 36 22 is_stmt 0 view .LVU29
+ 254 0000 08B5     		push	{r3, lr}
+ 255              		.cfi_def_cfa_offset 8
+ 256              		.cfi_offset 3, -8
+ 257              		.cfi_offset 14, -4
+ 258              		.loc 2 38 21 view .LVU30
+ 259 0002 1048     		ldr	r0, .L9
+ 260 0004 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 261              	.LVL21:
+  39:Buttons.cpp   ****     button2.Debounce();
+ 262              		.loc 2 39 5 is_stmt 1 view .LVU31
+ 263              		.loc 2 39 21 is_stmt 0 view .LVU32
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 7
+
+
+ 264 0008 0F48     		ldr	r0, .L9+4
+ 265 000a FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 266              	.LVL22:
+  40:Buttons.cpp   ****     buttonBack.Debounce();
+ 267              		.loc 2 40 5 is_stmt 1 view .LVU33
+ 268              		.loc 2 40 24 is_stmt 0 view .LVU34
+ 269 000e 0F48     		ldr	r0, .L9+8
+ 270 0010 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 271              	.LVL23:
+  41:Buttons.cpp   **** 
+  42:Buttons.cpp   ****     // Debounce new chord buttons
+  43:Buttons.cpp   ****     buttonC.Debounce();
+ 272              		.loc 2 43 5 is_stmt 1 view .LVU35
+ 273              		.loc 2 43 21 is_stmt 0 view .LVU36
+ 274 0014 0E48     		ldr	r0, .L9+12
+ 275 0016 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 276              	.LVL24:
+  44:Buttons.cpp   ****     buttonDm.Debounce();
+ 277              		.loc 2 44 5 is_stmt 1 view .LVU37
+ 278              		.loc 2 44 22 is_stmt 0 view .LVU38
+ 279 001a 0E48     		ldr	r0, .L9+16
+ 280 001c FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 281              	.LVL25:
+  45:Buttons.cpp   ****     buttonEm.Debounce();
+ 282              		.loc 2 45 5 is_stmt 1 view .LVU39
+ 283              		.loc 2 45 22 is_stmt 0 view .LVU40
+ 284 0020 0D48     		ldr	r0, .L9+20
+ 285 0022 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 286              	.LVL26:
+  46:Buttons.cpp   ****     buttonF.Debounce();
+ 287              		.loc 2 46 5 is_stmt 1 view .LVU41
+ 288              		.loc 2 46 21 is_stmt 0 view .LVU42
+ 289 0026 0D48     		ldr	r0, .L9+24
+ 290 0028 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 291              	.LVL27:
+  47:Buttons.cpp   ****     buttonG.Debounce();
+ 292              		.loc 2 47 5 is_stmt 1 view .LVU43
+ 293              		.loc 2 47 21 is_stmt 0 view .LVU44
+ 294 002c 0C48     		ldr	r0, .L9+28
+ 295 002e FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 296              	.LVL28:
+  48:Buttons.cpp   ****     buttonAm.Debounce();
+ 297              		.loc 2 48 5 is_stmt 1 view .LVU45
+ 298              		.loc 2 48 22 is_stmt 0 view .LVU46
+ 299 0032 0C48     		ldr	r0, .L9+32
+ 300 0034 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 301              	.LVL29:
+  49:Buttons.cpp   ****     buttonBdim.Debounce();
+ 302              		.loc 2 49 5 is_stmt 1 view .LVU47
+ 303              		.loc 2 49 24 is_stmt 0 view .LVU48
+ 304 0038 0B48     		ldr	r0, .L9+36
+  50:Buttons.cpp   **** }...
+ 305              		.loc 2 50 1 view .LVU49
+ 306 003a BDE80840 		pop	{r3, lr}
+ 307              		.cfi_restore 14
+ 308              		.cfi_restore 3
+ 309              		.cfi_def_cfa_offset 0
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 8
+
+
+  49:Buttons.cpp   ****     buttonBdim.Debounce();
+ 310              		.loc 2 49 24 view .LVU50
+ 311 003e FFF7FEBF 		b	_ZN5daisy6Switch8DebounceEv
+ 312              	.LVL30:
+ 313              	.L10:
+ 314 0042 00BF     		.align	2
+ 315              	.L9:
+ 316 0044 00000000 		.word	.LANCHOR0
+ 317 0048 00000000 		.word	.LANCHOR1
+ 318 004c 00000000 		.word	.LANCHOR2
+ 319 0050 00000000 		.word	.LANCHOR3
+ 320 0054 00000000 		.word	.LANCHOR4
+ 321 0058 00000000 		.word	.LANCHOR5
+ 322 005c 00000000 		.word	.LANCHOR6
+ 323 0060 00000000 		.word	.LANCHOR7
+ 324 0064 00000000 		.word	.LANCHOR8
+ 325 0068 00000000 		.word	.LANCHOR9
+ 326              		.cfi_endproc
+ 327              	.LFE2562:
+ 329              		.section	.text.startup._GLOBAL__sub_I_button1,"ax",%progbits
+ 330              		.align	1
+ 331              		.p2align 2,,3
+ 332              		.syntax unified
+ 333              		.thumb
+ 334              		.thumb_func
+ 336              	_GLOBAL__sub_I_button1:
+ 337              	.LFB2581:
+ 338              		.loc 2 50 1 is_stmt 1 view -0
+ 339              		.cfi_startproc
+ 340              		@ args = 0, pretend = 0, frame = 0
+ 341              		@ frame_needed = 0, uses_anonymous_args = 0
+ 342              	.LBB64:
+ 343              	.LBI64:
+ 344              		.loc 2 50 1 view .LVU52
+ 345              	.LVL31:
+ 346              	.LBB65:
+ 347              	.LBB66:
+ 348              	.LBI66:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 349              		.loc 1 41 5 view .LVU53
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 350              		.loc 1 41 5 is_stmt 0 view .LVU54
+ 351              	.LBE66:
+ 352              	.LBE65:
+ 353              	.LBE64:
+ 354              		.loc 2 50 1 view .LVU55
+ 355 0000 38B5     		push	{r3, r4, r5, lr}
+ 356              		.cfi_def_cfa_offset 16
+ 357              		.cfi_offset 3, -16
+ 358              		.cfi_offset 4, -12
+ 359              		.cfi_offset 5, -8
+ 360              		.cfi_offset 14, -4
+ 361              	.LBB78:
+ 362              	.LBB76:
+   6:Buttons.cpp   **** Switch button1;
+ 363              		.loc 2 6 8 view .LVU56
+ 364 0002 1B4D     		ldr	r5, .L13
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 9
+
+
+ 365 0004 1B4C     		ldr	r4, .L13+4
+ 366 0006 2A46     		mov	r2, r5
+ 367 0008 1B48     		ldr	r0, .L13+8
+ 368 000a 2146     		mov	r1, r4
+ 369 000c FFF7FEFF 		bl	__aeabi_atexit
+ 370              	.LVL32:
+ 371              	.LBB67:
+ 372              	.LBI67:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 373              		.loc 1 41 5 is_stmt 1 view .LVU57
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 374              		.loc 1 41 5 is_stmt 0 view .LVU58
+ 375              	.LBE67:
+   7:Buttons.cpp   **** Switch button2;
+ 376              		.loc 2 7 8 view .LVU59
+ 377 0010 2A46     		mov	r2, r5
+ 378 0012 2146     		mov	r1, r4
+ 379 0014 1948     		ldr	r0, .L13+12
+ 380 0016 FFF7FEFF 		bl	__aeabi_atexit
+ 381              	.LVL33:
+ 382              	.LBB68:
+ 383              	.LBI68:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 384              		.loc 1 41 5 is_stmt 1 view .LVU60
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 385              		.loc 1 41 5 is_stmt 0 view .LVU61
+ 386              	.LBE68:
+   8:Buttons.cpp   **** Switch buttonBack;
+ 387              		.loc 2 8 8 view .LVU62
+ 388 001a 2A46     		mov	r2, r5
+ 389 001c 2146     		mov	r1, r4
+ 390 001e 1848     		ldr	r0, .L13+16
+ 391 0020 FFF7FEFF 		bl	__aeabi_atexit
+ 392              	.LVL34:
+ 393              	.LBB69:
+ 394              	.LBI69:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 395              		.loc 1 41 5 is_stmt 1 view .LVU63
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 396              		.loc 1 41 5 is_stmt 0 view .LVU64
+ 397              	.LBE69:
+  11:Buttons.cpp   **** Switch buttonC;
+ 398              		.loc 2 11 8 view .LVU65
+ 399 0024 2A46     		mov	r2, r5
+ 400 0026 2146     		mov	r1, r4
+ 401 0028 1648     		ldr	r0, .L13+20
+ 402 002a FFF7FEFF 		bl	__aeabi_atexit
+ 403              	.LVL35:
+ 404              	.LBB70:
+ 405              	.LBI70:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 406              		.loc 1 41 5 is_stmt 1 view .LVU66
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 407              		.loc 1 41 5 is_stmt 0 view .LVU67
+ 408              	.LBE70:
+  12:Buttons.cpp   **** Switch buttonDm;
+ 409              		.loc 2 12 8 view .LVU68
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 10
+
+
+ 410 002e 2A46     		mov	r2, r5
+ 411 0030 2146     		mov	r1, r4
+ 412 0032 1548     		ldr	r0, .L13+24
+ 413 0034 FFF7FEFF 		bl	__aeabi_atexit
+ 414              	.LVL36:
+ 415              	.LBB71:
+ 416              	.LBI71:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 417              		.loc 1 41 5 is_stmt 1 view .LVU69
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 418              		.loc 1 41 5 is_stmt 0 view .LVU70
+ 419              	.LBE71:
+  13:Buttons.cpp   **** Switch buttonEm;
+ 420              		.loc 2 13 8 view .LVU71
+ 421 0038 2A46     		mov	r2, r5
+ 422 003a 2146     		mov	r1, r4
+ 423 003c 1348     		ldr	r0, .L13+28
+ 424 003e FFF7FEFF 		bl	__aeabi_atexit
+ 425              	.LVL37:
+ 426              	.LBB72:
+ 427              	.LBI72:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 428              		.loc 1 41 5 is_stmt 1 view .LVU72
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 429              		.loc 1 41 5 is_stmt 0 view .LVU73
+ 430              	.LBE72:
+  14:Buttons.cpp   **** Switch buttonF;
+ 431              		.loc 2 14 8 view .LVU74
+ 432 0042 2A46     		mov	r2, r5
+ 433 0044 2146     		mov	r1, r4
+ 434 0046 1248     		ldr	r0, .L13+32
+ 435 0048 FFF7FEFF 		bl	__aeabi_atexit
+ 436              	.LVL38:
+ 437              	.LBB73:
+ 438              	.LBI73:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 439              		.loc 1 41 5 is_stmt 1 view .LVU75
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 440              		.loc 1 41 5 is_stmt 0 view .LVU76
+ 441              	.LBE73:
+  15:Buttons.cpp   **** Switch buttonG;
+ 442              		.loc 2 15 8 view .LVU77
+ 443 004c 2A46     		mov	r2, r5
+ 444 004e 2146     		mov	r1, r4
+ 445 0050 1048     		ldr	r0, .L13+36
+ 446 0052 FFF7FEFF 		bl	__aeabi_atexit
+ 447              	.LVL39:
+ 448              	.LBB74:
+ 449              	.LBI74:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 450              		.loc 1 41 5 is_stmt 1 view .LVU78
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 451              		.loc 1 41 5 is_stmt 0 view .LVU79
+ 452              	.LBE74:
+  16:Buttons.cpp   **** Switch buttonAm;
+ 453              		.loc 2 16 8 view .LVU80
+ 454 0056 2A46     		mov	r2, r5
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 11
+
+
+ 455 0058 2146     		mov	r1, r4
+ 456 005a 0F48     		ldr	r0, .L13+40
+ 457 005c FFF7FEFF 		bl	__aeabi_atexit
+ 458              	.LVL40:
+ 459              	.LBB75:
+ 460              	.LBI75:
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 461              		.loc 1 41 5 is_stmt 1 view .LVU81
+  41:./libDaisy/src/hid/switch.h ****     ~Switch() {}
+ 462              		.loc 1 41 5 is_stmt 0 view .LVU82
+ 463              	.LBE75:
+  17:Buttons.cpp   **** Switch buttonBdim;
+ 464              		.loc 2 17 8 view .LVU83
+ 465 0060 2A46     		mov	r2, r5
+ 466 0062 2146     		mov	r1, r4
+ 467 0064 0D48     		ldr	r0, .L13+44
+ 468              	.LBE76:
+ 469              	.LBE78:
+ 470              		.loc 2 50 1 view .LVU84
+ 471 0066 BDE83840 		pop	{r3, r4, r5, lr}
+ 472              		.cfi_restore 14
+ 473              		.cfi_restore 5
+ 474              		.cfi_restore 4
+ 475              		.cfi_restore 3
+ 476              		.cfi_def_cfa_offset 0
+ 477              	.LBB79:
+ 478              	.LBB77:
+  17:Buttons.cpp   **** Switch buttonBdim;
+ 479              		.loc 2 17 8 view .LVU85
+ 480 006a FFF7FEBF 		b	__aeabi_atexit
+ 481              	.LVL41:
+ 482              	.L14:
+ 483 006e 00BF     		.align	2
+ 484              	.L13:
+ 485 0070 00000000 		.word	__dso_handle
+ 486 0074 00000000 		.word	_ZN5daisy6SwitchD1Ev
+ 487 0078 00000000 		.word	.LANCHOR0
+ 488 007c 00000000 		.word	.LANCHOR1
+ 489 0080 00000000 		.word	.LANCHOR2
+ 490 0084 00000000 		.word	.LANCHOR3
+ 491 0088 00000000 		.word	.LANCHOR4
+ 492 008c 00000000 		.word	.LANCHOR5
+ 493 0090 00000000 		.word	.LANCHOR6
+ 494 0094 00000000 		.word	.LANCHOR7
+ 495 0098 00000000 		.word	.LANCHOR8
+ 496 009c 00000000 		.word	.LANCHOR9
+ 497              	.LBE77:
+ 498              	.LBE79:
+ 499              		.cfi_endproc
+ 500              	.LFE2581:
+ 502              		.section	.init_array,"aw",%init_array
+ 503              		.align	2
+ 504 0000 00000000 		.word	_GLOBAL__sub_I_button1(target1)
+ 505              		.global	buttonBdim
+ 506              		.global	buttonAm
+ 507              		.global	buttonG
+ 508              		.global	buttonF
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 12
+
+
+ 509              		.global	buttonEm
+ 510              		.global	buttonDm
+ 511              		.global	buttonC
+ 512              		.global	buttonBack
+ 513              		.global	button2
+ 514              		.global	button1
+ 515              		.section	.bss.button1,"aw",%nobits
+ 516              		.align	2
+ 517              		.set	.LANCHOR0,. + 0
+ 520              	button1:
+ 521 0000 00000000 		.space	16
+ 521      00000000 
+ 521      00000000 
+ 521      00000000 
+ 522              		.section	.bss.button2,"aw",%nobits
+ 523              		.align	2
+ 524              		.set	.LANCHOR1,. + 0
+ 527              	button2:
+ 528 0000 00000000 		.space	16
+ 528      00000000 
+ 528      00000000 
+ 528      00000000 
+ 529              		.section	.bss.buttonAm,"aw",%nobits
+ 530              		.align	2
+ 531              		.set	.LANCHOR8,. + 0
+ 534              	buttonAm:
+ 535 0000 00000000 		.space	16
+ 535      00000000 
+ 535      00000000 
+ 535      00000000 
+ 536              		.section	.bss.buttonBack,"aw",%nobits
+ 537              		.align	2
+ 538              		.set	.LANCHOR2,. + 0
+ 541              	buttonBack:
+ 542 0000 00000000 		.space	16
+ 542      00000000 
+ 542      00000000 
+ 542      00000000 
+ 543              		.section	.bss.buttonBdim,"aw",%nobits
+ 544              		.align	2
+ 545              		.set	.LANCHOR9,. + 0
+ 548              	buttonBdim:
+ 549 0000 00000000 		.space	16
+ 549      00000000 
+ 549      00000000 
+ 549      00000000 
+ 550              		.section	.bss.buttonC,"aw",%nobits
+ 551              		.align	2
+ 552              		.set	.LANCHOR3,. + 0
+ 555              	buttonC:
+ 556 0000 00000000 		.space	16
+ 556      00000000 
+ 556      00000000 
+ 556      00000000 
+ 557              		.section	.bss.buttonDm,"aw",%nobits
+ 558              		.align	2
+ 559              		.set	.LANCHOR4,. + 0
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 13
+
+
+ 562              	buttonDm:
+ 563 0000 00000000 		.space	16
+ 563      00000000 
+ 563      00000000 
+ 563      00000000 
+ 564              		.section	.bss.buttonEm,"aw",%nobits
+ 565              		.align	2
+ 566              		.set	.LANCHOR5,. + 0
+ 569              	buttonEm:
+ 570 0000 00000000 		.space	16
+ 570      00000000 
+ 570      00000000 
+ 570      00000000 
+ 571              		.section	.bss.buttonF,"aw",%nobits
+ 572              		.align	2
+ 573              		.set	.LANCHOR6,. + 0
+ 576              	buttonF:
+ 577 0000 00000000 		.space	16
+ 577      00000000 
+ 577      00000000 
+ 577      00000000 
+ 578              		.section	.bss.buttonG,"aw",%nobits
+ 579              		.align	2
+ 580              		.set	.LANCHOR7,. + 0
+ 583              	buttonG:
+ 584 0000 00000000 		.space	16
+ 584      00000000 
+ 584      00000000 
+ 584      00000000 
+ 585              		.text
+ 586              	.Letext0:
+ 587              		.file 3 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/machine/_default_types.h"
+ 588              		.file 4 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_stdint.h"
+ 589              		.file 5 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdint.h"
+ 590              		.file 6 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 591              		.file 7 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath"
+ 592              		.file 8 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 593              		.file 9 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdlib"
+ 594              		.file 10 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdint"
+ 595              		.file 11 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/type_traits"
+ 596              		.file 12 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/debug/debug.h"
+ 597              		.file 13 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v
+ 598              		.file 14 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/algorithmfwd.h"
+ 599              		.file 15 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/stl_pair.h"
+ 600              		.file 16 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/exception_ptr.h"
+ 601              		.file 17 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdarg"
+ 602              		.file 18 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdio"
+ 603              		.file 19 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstring"
+ 604              		.file 20 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/predefined_ops.h
+ 605              		.file 21 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_types.h"
+ 606              		.file 22 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/reent.h"
+ 607              		.file 23 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/lock.h"
+ 608              		.file 24 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/math.h"
+ 609              		.file 25 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdlib.h"
+ 610              		.file 26 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/math.h"
+ 611              		.file 27 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/stdlib.h"
+ 612              		.file 28 "./libDaisy/src/daisy_core.h"
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 14
+
+
+ 613              		.file 29 "./libDaisy/src/per/tim.h"
+ 614              		.file 30 "./libDaisy/src/sys/system.h"
+ 615              		.file 31 "./libDaisy/src/per/qspi.h"
+ 616              		.file 32 "./libDaisy/src/per/dac.h"
+ 617              		.file 33 "./libDaisy/src/per/sai.h"
+ 618              		.file 34 "./libDaisy/src/hid/audio.h"
+ 619              		.file 35 "./libDaisy/src/per/adc.h"
+ 620              		.file 36 "./libDaisy/src/hid/usb.h"
+ 621              		.file 37 "./libDaisy/src/util/wav_format.h"
+ 622              		.file 38 "./libDaisy/src/dev/max11300.h"
+ 623              		.file 39 "./libDaisy/src/daisy_seed.h"
+ 624              		.file 40 "./libDaisy/src/per/gpio.h"
+ 625              		.file 41 "./libDaisy/src/dev/sdram.h"
+ 626              		.file 42 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h"
+ 627              		.file 43 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdio.h"
+ 628              		.file 44 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/string.h"
+ 629              		.file 45 "Buttons.h"
+ 630              		.file 46 "<built-in>"
+ 631              		.file 47 "./libDaisy/src/dev/sr_595.h"
+ARM GAS  /var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Buttons.cpp
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:19     .text._ZN5daisy6SwitchD2Ev:0000000000000000 $t
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:26     .text._ZN5daisy6SwitchD2Ev:0000000000000000 _ZN5daisy6SwitchD2Ev
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:26     .text._ZN5daisy6SwitchD2Ev:0000000000000000 _ZN5daisy6SwitchD1Ev
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:43     .text._Z11InitButtonsv:0000000000000000 $t
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:50     .text._Z11InitButtonsv:0000000000000000 _Z11InitButtonsv
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:224    .text._Z11InitButtonsv:0000000000000130 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:239    .text._Z13UpdateButtonsv:0000000000000000 $t
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:246    .text._Z13UpdateButtonsv:0000000000000000 _Z13UpdateButtonsv
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:316    .text._Z13UpdateButtonsv:0000000000000044 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:330    .text.startup._GLOBAL__sub_I_button1:0000000000000000 $t
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:336    .text.startup._GLOBAL__sub_I_button1:0000000000000000 _GLOBAL__sub_I_button1
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:485    .text.startup._GLOBAL__sub_I_button1:0000000000000070 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:503    .init_array:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:548    .bss.buttonBdim:0000000000000000 buttonBdim
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:534    .bss.buttonAm:0000000000000000 buttonAm
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:583    .bss.buttonG:0000000000000000 buttonG
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:576    .bss.buttonF:0000000000000000 buttonF
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:569    .bss.buttonEm:0000000000000000 buttonEm
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:562    .bss.buttonDm:0000000000000000 buttonDm
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:555    .bss.buttonC:0000000000000000 buttonC
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:541    .bss.buttonBack:0000000000000000 buttonBack
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:527    .bss.button2:0000000000000000 button2
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:520    .bss.button1:0000000000000000 button1
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:516    .bss.button1:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:523    .bss.button2:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:530    .bss.buttonAm:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:537    .bss.buttonBack:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:544    .bss.buttonBdim:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:551    .bss.buttonC:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:558    .bss.buttonDm:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:565    .bss.buttonEm:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:572    .bss.buttonF:0000000000000000 $d
+/var/folders/s6/2bsynnl15rj0bwtb9pgx4dc00000gn/T//ccfVeel8.s:579    .bss.buttonG:0000000000000000 $d
+                           .group:0000000000000000 _ZN5daisy6SwitchD5Ev
+
+UNDEFINED SYMBOLS
+_ZN5daisy9DaisySeed6GetPinEh
+_ZN5daisy6Switch4InitE12dsy_gpio_pinfNS0_4TypeENS0_8PolarityENS0_4PullE
+_ZN5daisy6Switch8DebounceEv
+__aeabi_atexit
+__dso_handle

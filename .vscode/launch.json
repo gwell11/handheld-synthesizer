@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "Cortex Debug",
+          "type": "cortex-debug",
+          "request": "launch",
+          "executable": "${workspaceRoot}/build/TestTFT.elf",
+          "servertype": "openocd",
+          "interface": "swd",
+          "preLaunchTask": "build_all_debug",
+          "postRestartCommands": [
+              "load",
+              "enable breakpoint",
+              "monitor reset"
+          ],
+          "svdFile": "${workspaceRoot}/.vscode/STM32H750x.svd",
+          "showDevDebugOutput": "parsed"
+      }
+  ]
+}
