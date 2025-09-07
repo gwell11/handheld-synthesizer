@@ -2,8 +2,9 @@
 
 A portable, open-source chord synthesizer built on the Electrosmith Daisy Seed platform. It is designed to be a powerful performance instrument focused on the expressive creation of harmonic textures.
 
-![Photo of the synthesizer breadboard](placeholder.jpg)
-*(Suggestion: Replace `placeholder.jpg` with a real photo of your breadboarded synth! You can upload images directly to GitHub.)*
+![Handheld Chord Synthesizer prototype breadboarded with Daisy Seed, TFT display, and chord button controls.](IMG_3731.jpeg)
+
+*Handheld Chord Synthesizer prototype breadboarded with Daisy Seed, TFT display, and chord button controls.*
 
 ## Features
 
@@ -48,4 +49,5 @@ This project aims to implement a professional-grade feature set for deep synthes
 ## Project Status
 
 This project has been revived with a new, ambitious feature set. The immediate goals are to fix outstanding bugs in the core code, refactor the sound engine to support the new architecture, and then begin implementing the advanced performance and sequencing features.
+
 
