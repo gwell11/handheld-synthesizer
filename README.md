@@ -48,3 +48,4 @@ This project aims to implement a professional-grade feature set for deep synthes
 ## Project Status
 
 This project has been revived with a new, ambitious feature set. The immediate goals are to fix outstanding bugs in the core code, refactor the sound engine to support the new architecture, and then begin implementing the advanced performance and sequencing features.
+
