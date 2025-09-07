@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0ef1cf117570f17b83ebeeb1efeec9d9772d06d2
 # Handheld Chord Synthesizer
 
 A portable, open-source chord synthesizer built on the Electrosmith Daisy Seed platform. It features an interactive TFT display for navigating menus, selecting chords, and shaping sounds in real-time.
@@ -31,4 +35,9 @@ A portable, open-source chord synthesizer built on the Electrosmith Daisy Seed p
 
 ## Project Status
 
+<<<<<<< HEAD
 This project was recently revived after being abandoned for about a year. The immediate goals are to refactor the code, fix bugs, and implement the remaining features.
+=======
+This project was recently revived after being abandoned for about a year. The immediate goals are to refactor the code, fix bugs, and implement the remaining features.
+
+>>>>>>> 0ef1cf117570f17b83ebeeb1efeec9d9772d06d2
