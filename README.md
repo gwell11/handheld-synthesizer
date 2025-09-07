@@ -1,29 +1,41 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 0ef1cf117570f17b83ebeeb1efeec9d9772d06d2
 # Handheld Chord Synthesizer
 
-A portable, open-source chord synthesizer built on the Electrosmith Daisy Seed platform. It features an interactive TFT display for navigating menus, selecting chords, and shaping sounds in real-time.
+A portable, open-source chord synthesizer built on the Electrosmith Daisy Seed platform. It is designed to be a powerful performance instrument focused on the expressive creation of harmonic textures.
 
 ![Photo of the synthesizer breadboard](placeholder.jpg)
 *(Suggestion: Replace `placeholder.jpg` with a real photo of your breadboarded synth! You can upload images directly to GitHub.)*
 
 ## Features
 
-*   **Polyphonic Chord Engine:** Plays multi-voice chords based on the major scale.
-*   **Dedicated Chord Buttons:** 7 physical buttons for instantly triggering the chords of the C Major scale (C, Dm, Em, F, G, Am, Bdim).
-*   **Interactive UI:** A color TFT screen with a menu system navigated by a rotary encoder and buttons.
-*   **Sound Design:** On-device editing of sound parameters like ADSR envelope and filter cutoff.
-*   **State Management:** A menu state machine that allows navigation between different settings screens (Main Menu, Chord Selection, Sound Design, etc.).
+This project aims to implement a professional-grade feature set for deep synthesis and performance.
 
-## Hardware
+### Sound Engine (Per Voice)
+*   **4-Note Polyphony:** Allows for full chords to ring out.
+*   **Triple Oscillator Architecture:** Each voice is comprised of three independent oscillators with selectable waveforms (Sine, Triangle, Saw, Square) and controls for mix levels and detuning.
+*   **Noise Generator:** A mixable white noise source for adding texture and percussive elements.
 
-*   Electrosmith Daisy Seed
-*   Color TFT Display (e.g., ST7735 or ILI9341)
-*   Rotary Encoder with Push-button
-*   10x Momentary Push Buttons
-*   Breadboard and jumper wires
+### Sound Shaping (Per Voice)
+*   **Multi-Mode Filter:** A resonant filter with Low-Pass, High-Pass, and Band-Pass modes.
+*   **Dual ADSR Envelopes:** A dedicated envelope for the amplifier (volume) and a second for modulating the filter cutoff.
+
+### Performance & Sequencing
+*   **Expressive Chord Control:** 7 dedicated buttons for triggering diatonic chords, with the ability to cycle through inversions.
+*   **Performance Encoder:** A special mode where the encoder can be used to "strum" chords or control the rate of a built-in arpeggiator (Up, Down, Up/Down, Random patterns).
+*   **16-Step Chord Sequencer:** An onboard sequencer for building and playing entire chord progressions.
+*   **Humanize Function:** An optional feature to add subtle, random variations to note timing and velocity for a more organic, less robotic feel.
+
+### Modulation
+*   **Flexible LFO:** One Low-Frequency Oscillator with multiple waveforms that can be routed to modulate Pitch, Filter Cutoff, or Volume.
+
+## Hardware Specification
+
+*   **Processor:** Electrosmith Daisy Seed
+*   **Display:** Wide-aspect landscape color TFT screen
+*   **Controls:** 1x Rotary Encoder, 9x Momentary Push-Buttons (7 for chords, 2 for navigation)
+*   **Connectivity:**
+    *   3.5mm Mono Audio Output
+    *   Class-Compliant USB MIDI via Micro-USB port
+    *   3.5mm "Trio Sync" I/O for tempo-syncing with other gear
 
 ## How to Build and Run
 
@@ -35,9 +47,4 @@ A portable, open-source chord synthesizer built on the Electrosmith Daisy Seed p
 
 ## Project Status
 
-<<<<<<< HEAD
-This project was recently revived after being abandoned for about a year. The immediate goals are to refactor the code, fix bugs, and implement the remaining features.
-=======
-This project was recently revived after being abandoned for about a year. The immediate goals are to refactor the code, fix bugs, and implement the remaining features.
-
->>>>>>> 0ef1cf117570f17b83ebeeb1efeec9d9772d06d2
+This project has been revived with a new, ambitious feature set. The immediate goals are to fix outstanding bugs in the core code, refactor the sound engine to support the new architecture, and then begin implementing the advanced performance and sequencing features.
